@@ -53,7 +53,7 @@ class ConfigBuilder(configFile: String) {
         .resolveWith(ConfigFactory.systemProperties, ConfigResolveOptions.defaults.setAllowUnresolved(true))
 
       val options: ConfigRenderOptions = ConfigRenderOptions.concise.setFormatted(true)
-      println("[INFO] parsed config file: " + config.root().render(options))
+      // println("[INFO] parsed config file: " + config.root().render(options))
 
       config
     }) match {

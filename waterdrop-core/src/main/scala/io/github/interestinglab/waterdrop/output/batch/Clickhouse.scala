@@ -225,7 +225,7 @@ class Clickhouse extends BaseOutput {
     val res = Try(statement.executeBatch())
     res match {
       case Success(_) => {
-        logInfo("Insert into ClickHouse succeed")
+        logInfo("Insert into ClickHouse succeed, res %s".format(res.get.mkString(",")))
         statement.close()
       }
       case Failure(e: ClickHouseException) => {

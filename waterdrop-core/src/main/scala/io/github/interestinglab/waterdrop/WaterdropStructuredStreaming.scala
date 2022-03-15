@@ -80,10 +80,6 @@ object WaterdropStructuredStreaming extends Logging {
     val configBuilder = new ConfigBuilder(configFile)
     println("[INFO] loading SparkConf: ")
     val sparkConf = Waterdrop.createSparkConf(configBuilder)
-    sparkConf.getAll.foreach(entry => {
-      val (key, value) = entry
-      println("\t" + key + " => " + value)
-    })
 
     val sparkSession = SparkSession.builder.config(sparkConf).getOrCreate()
 
